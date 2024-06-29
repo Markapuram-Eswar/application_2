@@ -10,11 +10,13 @@ class Homepage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Retrieve current theme brightness
-    Brightness currentBrightness = Get.theme.brightness;
+    Brightness currentBrightness = MediaQuery.of(context).platformBrightness;
 
     // Determine background color based on theme mode
     Color bodyColor =
-        currentBrightness == Brightness.dark ? Colors.black : Colors.white;
+        currentBrightness == Brightness.dark ? Colors.grey[900]! : Colors.white;
+    Color drawerColor =
+        currentBrightness == Brightness.dark ? Colors.grey[850]! : Colors.white;
     Color drawerItemColor =
         currentBrightness == Brightness.dark ? Colors.white : Colors.blue;
 
